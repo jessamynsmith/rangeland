@@ -3,12 +3,12 @@ from .models import GvData
 
 
 def index(request):
-    all_geneva = GvData.objects.all()
+    all_geneva_data = GvData.objects.all()
     html = ''
 
-    for records in all_geneva:
-        url = '/geneva/' + str(GvData.id) + '/'
-        html += '<a href="' + url + '">title</a><br>'
+    for record in all_geneva_data:
+        url = '/geneva/{}/'.format(record.id)
+        html += '<a href="{}">{}</a><br>'.format(url, record.pub_date)
     return HttpResponse(html)
 
 

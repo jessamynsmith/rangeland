@@ -1,15 +1,12 @@
 from django.http import HttpResponse
+from django.template import loader
 from .models import GvData
 
 
 def index(request):
     all_geneva_data = GvData.objects.all()
-    html = ''
-
-    for record in all_geneva_data:
-        url = '/geneva/{}/'.format(record.id)
-        html += '<a href="{}">{}</a><br>'.format(url, record.pub_date)
-    return HttpResponse(html)
+    template = loader.get.template('')
+    return HttpResponse('')
 
 
 def geneva_record(request, geneva_id):

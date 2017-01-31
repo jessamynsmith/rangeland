@@ -41,6 +41,9 @@ class GvData(models.Model):
     def __str__(self):
         return str(self.pub_date)
 
+    def __iter__(self):
+        return self
+
     class Meta:
         verbose_name = 'GV info'
         ordering = ['-pub_date']

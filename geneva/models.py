@@ -39,7 +39,7 @@ class GvData(models.Model):
     pub_date = models.DateField(db_index=True)
 
     def __str__(self):
-        return self.slug
+        return str(self.pub_date)
 
     class Meta:
         verbose_name = 'GV info'

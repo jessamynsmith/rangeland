@@ -3,9 +3,13 @@ from .models import GvData
 
 
 def index(request):
+    all_geneva = GvData.objects.all()
     html = ''
 
-    return HttpResponse('<h1>This is the Geneva Home page</h1>')
+    for records in all_geneva:
+        url = '/geneva/' + str(GvData.id) + '/'
+        html += '<a href="' + url + '">title</a><br>'
+    return HttpResponse(html)
 
 
 def geneva_record(request, geneva_id):

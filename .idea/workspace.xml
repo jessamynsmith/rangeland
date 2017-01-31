@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bd6f8419-5065-4aef-b542-ee1bae5af067" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/geneva/templates/geneva/geneva_record.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/geneva/models.py" afterPath="$PROJECT_DIR$/geneva/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/geneva/templates/geneva/index.html" afterPath="$PROJECT_DIR$/geneva/templates/geneva/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/geneva/views.py" afterPath="$PROJECT_DIR$/geneva/views.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -499,7 +495,14 @@
       <option name="project" value="LOCAL" />
       <updated>1485883433456</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="updating views, working on iterating through views">
+      <created>1485905579875</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1485905579875</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -534,7 +537,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="updating geneva/views.py and creating templates" />
-    <option name="LAST_COMMIT_MESSAGE" value="updating geneva/views.py and creating templates" />
+    <MESSAGE value="updating views, working on iterating through views" />
+    <option name="LAST_COMMIT_MESSAGE" value="updating views, working on iterating through views" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -1,7 +1,7 @@
 from django.db import models
 
 
-class GvField(models.Model):
+class GvData(models.Model):
     gv_01_open_stock = models.FloatField()
     gv_02_open_stock = models.FloatField()
     gv_03_open_stock = models.FloatField()

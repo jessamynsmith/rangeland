@@ -2,21 +2,21 @@ from django.db import models
 
 
 class GvData(models.Model):
-    gv_01_open_stock = models.FloatField()
-    gv_02_open_stock = models.FloatField()
-    gv_03_open_stock = models.FloatField()
-    gv_01_close_stock = models.FloatField()
-    gv_02_close_stock = models.FloatField()
-    gv_03_close_stock = models.FloatField()
+    gv_01_open_stock = models.FloatField(default=0)
+    gv_02_open_stock = models.FloatField(default=0)
+    gv_03_open_stock = models.FloatField(default=0)
+    gv_01_close_stock = models.FloatField(default=0)
+    gv_02_close_stock = models.FloatField(default=0)
+    gv_03_close_stock = models.FloatField(default=0)
     gv_01_open_gauge = models.CharField(max_length=20)
     gv_02_open_gauge = models.CharField(max_length=20)
     gv_03_open_gauge = models.CharField(max_length=20)
     gv_01_close_gauge = models.CharField(max_length=20)
     gv_02_close_gauge = models.CharField(max_length=20)
     gv_03_close_gauge = models.CharField(max_length=20)
-    gv_01_stock_change = models.FloatField()
-    gv_02_stock_change = models.FloatField()
-    gv_03_stock_change = models.FloatField()
+    gv_01_stock_change = models.FloatField(default=0)
+    gv_02_stock_change = models.FloatField(default=0)
+    gv_03_stock_change = models.FloatField(default=0)
     tact1_open = models.FloatField(default=0)
     tact2_open = models.FloatField(default=0)
     tact3_open = models.FloatField(default=0)
@@ -39,7 +39,7 @@ class GvData(models.Model):
     pub_date = models.DateField(db_index=True)
 
     def __str__(self):
-        return self.pub_date
+        return self.slug
 
     class Meta:
         verbose_name = 'GV info'

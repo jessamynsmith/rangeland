@@ -1,16 +1,16 @@
-{% load staticfiles %}
-<link rel="stylesheet" type="text/css" href="{% static 'geneva/style.css'%}">
+{% extends 'geneva/base.html'%}
+{% block title %}Geneva Records{% endblock %}
 
+{% block content %}
+  <h1>Home Page</h1>
 
-{% if all_geneva_data %}
 
     <h1>Geneva Report Records</h1>
     <ul>
-        {% for record in all_geneva_data %}
+        {% for record in object_list %}
         <li><a href="{% url 'geneva:geneva_record' record.id %}">{{ record.pub_date }}</a> </li>
         {% endfor %}
     </ul>
 
-{% else %}
-    <h3>There are no current records</h3>
-{% endif %}
+
+{% endblock %}

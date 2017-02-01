@@ -8,12 +8,12 @@ class GvData(models.Model):
     gv_01_close_stock = models.FloatField(default=0)
     gv_02_close_stock = models.FloatField(default=0)
     gv_03_close_stock = models.FloatField(default=0)
-    gv_01_open_gauge = models.CharField(max_length=20)
-    gv_02_open_gauge = models.CharField(max_length=20)
-    gv_03_open_gauge = models.CharField(max_length=20)
-    gv_01_close_gauge = models.CharField(max_length=20)
-    gv_02_close_gauge = models.CharField(max_length=20)
-    gv_03_close_gauge = models.CharField(max_length=20)
+    gv_01_open_gauge = models.CharField(max_length=20, default="0' 0\" /16ths")
+    gv_02_open_gauge = models.CharField(max_length=20, default="0' 0\" /16ths")
+    gv_03_open_gauge = models.CharField(max_length=20, default="0' 0\" /16ths")
+    gv_01_close_gauge = models.CharField(max_length=20, default="0' 0\" /16ths")
+    gv_02_close_gauge = models.CharField(max_length=20, default="0' 0\" /16ths")
+    gv_03_close_gauge = models.CharField(max_length=20, default="0' 0\" /16ths")
     gv_01_stock_change = models.FloatField(default=0)
     gv_02_stock_change = models.FloatField(default=0)
     gv_03_stock_change = models.FloatField(default=0)
@@ -40,9 +40,6 @@ class GvData(models.Model):
 
     def __str__(self):
         return str(self.pub_date)
-
-    def __iter__(self):
-        return self
 
     class Meta:
         verbose_name = 'GV info'

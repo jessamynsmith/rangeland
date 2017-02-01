@@ -1,8 +1,13 @@
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'geneva/style.css'%}">
+
+
 {% if all_geneva_data %}
+
     <h1>Geneva Report Records</h1>
     <ul>
         {% for record in all_geneva_data %}
-        <li><a href="/geneva/{{ record.id }}">{{ record.pub_date }}</a> </li>
+        <li><a href="{% url 'geneva:geneva_record' record.id %}">{{ record.pub_date }}</a> </li>
         {% endfor %}
     </ul>
 

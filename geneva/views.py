@@ -1,18 +1,6 @@
 from django.views import generic
-from django.shortcuts import render, get_object_or_404
 from .models import GvData
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
-
-
-# def index(request):
-#     all_geneva_data = GvData.objects.all()
-#     return render(request, 'geneva/index.html', {'all_geneva_data': all_geneva_data})
-#
-#
-# def geneva_record(request, geneva_id):
-#
-#     record = get_object_or_404(GvData, pk=geneva_id)
-#     return render(request, 'geneva/geneva_record.html', {'record': record})
 
 
 class IndexView(generic.ListView):
@@ -25,3 +13,19 @@ class IndexView(generic.ListView):
 class RecordView(generic.DetailView):
     model = GvData
     template_name = 'geneva/geneva_record.html'
+
+
+class RecordCreate(CreateView):
+    model = GvData
+    fields = ['gv_01_close_gauge', 'gv_01_close_stock', 'gv_01_stock_change',
+              'gv_02_close_gauge', 'gv_02_close_stock', 'gv_02_stock_change',
+              'gv_03_close_gauge', 'gv_03_close_stock', 'gv_03_stock_change',
+              'tact1_close', 'tact1_total', 'tact2_close', 'tact2_total',
+              'tact3_close', 'tact3_total', 'tact4_close', 'tact4_total',
+              'tact5_close', 'tact5_total', 'incoming_meter_1_close',
+              'incoming_meter_1_total', 'incoming_meter_2_close',
+              'incoming_meter_2_total', 'incoming_meter_daily_total',
+              'outgoing_meter_1_close', 'outgoing_meter_1_total',
+              'outgoing_meter_2_close', 'outgoing_meter_2_total',
+              'outgoing_meter_daily_total', 'transactions_total', 'gsv_total',
+              'comments']

@@ -3,7 +3,7 @@
 
 
 {% block content %}
-
+    <form method="post">
     <h1>record view</h1>
     <h1>{{ object.pub_date }}</h1>
     <h3>{{ object.id }}</h3>
@@ -22,33 +22,33 @@
 
 				<tr>
 					<th>GV-01</th>
-					<td><input type="text" class="form-control" placeholder="Open Gauge" /></td>
-			      	<td><input type="number" class="form-control" /></td>
-			     	<td><input type="text" class="form-control" placeholder="Closing Gauge" /></td>
-			      	<td><input type="number" class="form-control" /></td>
-			      	<td><input type="number" class="form-control" /></td>
+					<td><input type="text" class="form-control" placeholder="Open Gauge" required/></td>
+			      	<td><input type="number" class="form-control" placeholder="BBLS Open Stock" required/></td>
+			     	<td><input type="text" class="form-control" placeholder="Closing Gauge" required/></td>
+			      	<td><input type="number" class="form-control" placeholder="BBLS Closing Stock" required/></td>
+			      	<td><input type="number" class="form-control" placeholder="Stock Change" required/></td>
 				</tr>
 
 
 
 				<tr>
 					<th>GV-02</th>
-					<td><input type="text" class="form-control" placeholder="Open Gauge" /></td>
-			      	<td><input type="number" class="form-control" /></td>
-			     	<td><input type="text" class="form-control" placeholder="Closing Gauge" /></td>
-			      	<td><input type="number" class="form-control" /></td>
-			      	<td><input type="number" class="form-control" /></td>
+					<td><input type="text" class="form-control" placeholder="Open Gauge" required/></td>
+			      	<td><input type="number" class="form-control" placeholder="BBLS Open Stock" required/></td>
+			     	<td><input type="text" class="form-control" placeholder="Closing Gauge" required/></td>
+			      	<td><input type="number" class="form-control" placeholder="BBLS Closing Stock" required/></td>
+			      	<td><input type="number" class="form-control" placeholder="Stock Change"required/></td>
 				</tr>
 
 
 
 				<tr>
 					<th>GV-03</th>
-					<td><input type="text" class="form-control" placeholder="Open Gauge" /></td>
-			      	<td><input type="number" class="form-control" /></td>
-			     	<td><input type="text" class="form-control" placeholder="Closing Gauge" /></td>
-			      	<td><input type="number" class="form-control" /></td>
-			      	<td><input type="number" class="form-control" /></td>
+					<td><input type="text" class="form-control" placeholder="Open Gauge" required/></td>
+			      	<td><input type="number" class="form-control" placeholder="BBLS Open Stock" required/></td>
+			     	<td><input type="text" class="form-control" placeholder="Closing Gauge" required/></td>
+			      	<td><input type="number" class="form-control" placeholder="BBLS Closing Stock" required/></td>
+			      	<td><input type="number" class="form-control" placeholder="Stock Change" required/></td>
 				</tr>
 			</div>
 		</table>
@@ -68,43 +68,42 @@
 
 				<tr>
 					<th>Tact #1</th>
-					<td><input type="number" class="form-control" /></td>
-					<td><input type="number" class="form-control" /></td>
-					<td><input type="number" class="form-control" /></td>
+					<td><input type="number" class="form-control" placeholder="Open" required/></td>
+					<td><input type="number" class="form-control" placeholder="Close" required/></td>
+					<td><input type="number" class="form-control" placeholder="Total" required/></td>
 
 				<tr>
 					<th>Tact #2</th>
-					<td><input type="number" class="form-control" /></td>
-					<td><input type="number" class="form-control" /></td>
-					<td><input type="number" class="form-control" /></td>
+					<td><input type="number" class="form-control" placeholder="Open" required/></td>
+					<td><input type="number" class="form-control" placeholder="Close" required/></td>
+					<td><input type="number" class="form-control" placeholder="Total" required/></td>
 
 				<tr>
 					<th>Tact #3</th>
-					<td><input type="number" class="form-control" /></td>
-					<td><input type="number" class="form-control" /></td>
-					<td><input type="number" class="form-control" /></td>
+					<td><input type="number" class="form-control" placeholder="Open" required/></td>
+					<td><input type="number" class="form-control" placeholder="Close" required/></td>
+					<td><input type="number" class="form-control" placeholder="Total" required/></td>
 
 				</tr>
 				<tr>
 					<th>Tact #4</th>
-					<td><input type="number" class="form-control" /></td>
-					<td><input type="number" class="form-control" /></td>
-					<td><input type="number" class="form-control" /></td>
-
+					<td><input type="number" class="form-control" placeholder="Open" required/></td>
+					<td><input type="number" class="form-control" placeholder="Close" required/></td>
+					<td><input type="number" class="form-control" placeholder="Total" required/></td>
 				</tr>
 				<tr>
 					<th>Tact #5</th>
-					<td><input type="number" class="form-control" /></td>
-					<td><input type="number" class="form-control" /></td>
-					<td><input type="number" class="form-control" /></td>
+					<td><input type="number" class="form-control" placeholder="Open" required/></td>
+					<td><input type="number" class="form-control" placeholder="Close" required/></td>
+					<td><input type="number" class="form-control" placeholder="Total" required/></td>
 
 				<tr>
 					<th># of Transactions</th>
-					<td><input type="number" class="form-control" /></td>
+					<td><input type="number" class="form-control" required/></td>
 				</tr>
 				<tr>
 					<th>GSV Total</th>
-					<td><input type="number" class="form-control" /></td>
+					<td><input type="number" class="form-control" required/></td>
 				</tr>
 
 
@@ -134,8 +133,8 @@
 					</tr>
 					<tr>
 						<th>Meter #1 (EAST)</th>
-						<td><input type="number" class="form-control" /></td>
-						<td><input type="number" class="form-control" /></td>
+						<td><input type="number" class="form-control" placeholder="Meter 1 Open" required/></td>
+						<td><input type="number" class="form-control" placeholder="Meter 1 Close" required/></td>
 						<div class="btn-group" data-toggle="buttons" id="radioopt">
 							  <td><label class="btn btn-primary active">
 							    <input type="radio" name="options" id="option1">
@@ -152,13 +151,13 @@
 							  </label>
 							  </td>
 						</div>
-						<td><input type="number" class="form-control" /></td>
+						<td><input type="number" class="form-control" placeholder="Daily Total" required/></td>
 
 					</tr>
 					<tr>
 						<th>Meter #2 (WEST)</th>
-						<td><input type="number" class="form-control" /></td>
-						<td><input type="number" class="form-control" /></td>
+						<td><input type="number" class="form-control" placeholder="Meter 2 Open" required/></td>
+						<td><input type="number" class="form-control" placeholder="Meter 2 Close" required/></td>
 						<div class="btn-group" data-toggle="buttons" id="radioopt">
 							  <td><label class="btn btn-primary active">
 							    <input type="radio" name="options" id="option1">
@@ -175,12 +174,12 @@
 							  </label>
 							  </td>
 						</div>
-						<td><input type="number" class="form-control" /></td>
+						<td><input type="number" class="form-control" placeholder="Daily Total" required/></td>
 
 					</tr>
 					<tr>
 						<th>Total</th>
-						<td><input type="number" class="form-control" /></td
+						<td><input type="number" class="form-control" placeholder="Combined Total" required/></td
 					</tr>
 
 			</div>
@@ -207,8 +206,8 @@
 					</tr>
 					<tr>
 						<th>Meter #1 (EAST)</th>
-						<td><input type="number" class="form-control" /></td>
-						<td><input type="number" class="form-control" /></td>
+						<td><input type="number" class="form-control" placeholder="Meter 1 Open" required/></td>
+						<td><input type="number" class="form-control" placeholder="Meter 1 Close" required/></td>
 						<div class="btn-group" data-toggle="buttons" id="radioopt">
 							  <td><label class="btn btn-primary active">
 							    <input type="radio" name="options" id="option1">
@@ -225,13 +224,13 @@
 							  </label>
 							  </td>
 						</div>
-						<td><input type="number" class="form-control" /></td>
+						<td><input type="number" class="form-control" placeholder="Daily Total" required/></td>
 
 					</tr>
 					<tr>
 						<th>Meter #2 (WEST)</th>
-						<td><input type="number" class="form-control" /></td>
-						<td><input type="number" class="form-control" /></td>
+						<td><input type="number" class="form-control" placeholder="Meter 2 Open" required/></td>
+						<td><input type="number" class="form-control" placeholder="Meter 2 Close" required/></td>
 						<div class="btn-group" data-toggle="buttons" id="radioopt">
 							  <td><label class="btn btn-primary active">
 							    <input type="radio" name="options" id="option1">
@@ -248,14 +247,14 @@
 							  </label>
 							  </td>
 						</div>
-						<td><input type="number" class="form-control" /></td>
+						<td><input type="number" class="form-control" placeholder="Daily Total" required/></td>
 
 
 
 					</tr>
 					<tr>
 						<th>Total</th>
-						<td><input type="number" class="form-control" /></td>
+						<td><input type="number" class="form-control" placeholder="Combined Total" required/></td>
 
 					</tr>
 			</div>
@@ -266,10 +265,10 @@
 
 		<div class="form-group">
   		<label for="comment">Comments:</label>
-  		<textarea class="form-control" rows="5" id="comment"></textarea>
+  		<textarea class="form-control" rows="5" id="comments" required></textarea>
 		</div>
 
 	</div>
-
+    </form>
 
 {% endblock %}

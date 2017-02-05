@@ -8,7 +8,20 @@
     <h1>Geneva Report Records</h1>
     <ul>
         {% for record in object_list %}
-        <li><a href="{% url 'geneva:geneva_record' record.id %}">{{ record.pub_date }}</a> </li>
+        <li><a href="{% url 'geneva:geneva_record' record.id %}">{{ record.pub_date }}</a>
+
+            <form action="{% url 'geneva:record-update' record.id %}" method="get" style="display: inline">
+
+                {% csrf_token %}
+                <button class="btn btn-success" >Update Record</button>
+
+            </form><form action="{% url 'geneva:record-delete' record.id %}" method="post" style="display: inline">
+
+                {% csrf_token %}
+                <button class="btn btn-danger" >Delete Record</button>
+
+            </form>
+        </li>
         {% endfor %}
     </ul>
 

@@ -51,13 +51,14 @@ class GvData(models.Model):
     transactions_total = models.FloatField(default=0)
     comments = models.CharField(max_length=200, default='comments')
     slug = models.SlugField(unique=True)
+    report_file = models.FileField(default=None)
     pub_date = models.DateField(db_index=True)
 
     def __str__(self):
-        return str(self.pub_date)
+        return str(self.pub_date) + '(' + str(self.pk) + ')'
 
     def get_absolute_url(self):
-        return reverse('geneva:geneva_record', kwargs={'pk': self.pk})
+        return reverse('geneva:geneva', kwargs={'pk': self.pk})
 
     class Meta:
         verbose_name = 'GV info'

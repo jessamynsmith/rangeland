@@ -1,9 +1,10 @@
+
 {% extends 'geneva/base.html' %}
+{% load mathfilters %}
 {% block title %}{{ object.id }}    {{ object.pub_date }}{% endblock %}
 
 
 {% block content %}
-    <form method="post">
     <h1>record view</h1>
     <h1>{{ object.pub_date }}</h1>
     <h3>{{ object.id }}</h3>
@@ -22,33 +23,36 @@
 
 				<tr>
 					<th>GV-01</th>
-					<td><input type="text" class="form-control" placeholder="Open Gauge" required/></td>
-			      	<td><input type="number" class="form-control" placeholder="BBLS Open Stock" required/></td>
-			     	<td><input type="text" class="form-control" placeholder="Closing Gauge" required/></td>
-			      	<td><input type="number" class="form-control" placeholder="BBLS Closing Stock" required/></td>
-			      	<td><input type="number" class="form-control" placeholder="Stock Change" required/></td>
+					<td><input type="text" class="form-control" placeholder="Open Gauge" value="{{ object.gv_01_open_gauge }}"/></td>
+			      	<td><input type="number" class="form-control" placeholder="BBLS Open Stock" value="{{ object.gv_01_open_stock }}"/></td>
+			     	<td><input type="text" class="form-control" placeholder="Closing Gauge" value="{{ object.gv_01_close_gauge }}"/></td>
+			      	<td><input type="number" class="form-control" placeholder="BBLS Closing Stock" value="{{ object.gv_01_close_stock }}"/></td>
+			      	<td><input type="number" class="form-control" placeholder="Stock Change"
+                               value="{{ object.gv_01_close_stock|sub:object.gv_01_open_stock }}"/></td>
 				</tr>
 
 
 
 				<tr>
 					<th>GV-02</th>
-					<td><input type="text" class="form-control" placeholder="Open Gauge" required/></td>
-			      	<td><input type="number" class="form-control" placeholder="BBLS Open Stock" required/></td>
-			     	<td><input type="text" class="form-control" placeholder="Closing Gauge" required/></td>
-			      	<td><input type="number" class="form-control" placeholder="BBLS Closing Stock" required/></td>
-			      	<td><input type="number" class="form-control" placeholder="Stock Change"required/></td>
+					<td><input type="text" class="form-control" placeholder="Open Gauge" value="{{ object.gv_02_open_gauge }}"/></td>
+			      	<td><input type="number" class="form-control" placeholder="BBLS Open Stock" value="{{ object.gv_02_open_stock }}"/></td>
+			     	<td><input type="text" class="form-control" placeholder="Closing Gauge" value="{{ object.gv_02_close_gauge }}"/></td>
+			      	<td><input type="number" class="form-control" placeholder="BBLS Closing Stock" value="{{ object.gv_02_close_stock }}"/></td>
+			      	<td><input type="number" class="form-control" placeholder="Stock Change"
+                               value="{{ object.gv_02_close_stock|sub:object.gv_02_open_stock }}"/></td>
 				</tr>
 
 
 
 				<tr>
 					<th>GV-03</th>
-					<td><input type="text" class="form-control" placeholder="Open Gauge" required/></td>
-			      	<td><input type="number" class="form-control" placeholder="BBLS Open Stock" required/></td>
-			     	<td><input type="text" class="form-control" placeholder="Closing Gauge" required/></td>
-			      	<td><input type="number" class="form-control" placeholder="BBLS Closing Stock" required/></td>
-			      	<td><input type="number" class="form-control" placeholder="Stock Change" required/></td>
+					<td><input type="text" class="form-control" placeholder="Open Gauge" value="{{ object.gv_03_open_gauge }}"/></td>
+			      	<td><input type="number" class="form-control" placeholder="BBLS Open Stock" value="{{ object.gv_03_open_stock }}"/></td>
+			     	<td><input type="text" class="form-control" placeholder="Closing Gauge" value="{{ object.gv_03_close_gauge }}"/></td>
+			      	<td><input type="number" class="form-control" placeholder="BBLS Closing Stock" value="{{ object.gv_03_close_stock }}"/></td>
+			      	<td><input type="number" class="form-control" placeholder="Stock Change"
+                               value="{{ object.gv_03_close_stock|sub:object.gv_03_open_stock }}"/></td>
 				</tr>
 			</div>
 		</table>
@@ -68,42 +72,47 @@
 
 				<tr>
 					<th>Tact #1</th>
-					<td><input type="number" class="form-control" placeholder="Open" required/></td>
-					<td><input type="number" class="form-control" placeholder="Close" required/></td>
-					<td><input type="number" class="form-control" placeholder="Total" required/></td>
+					<td><input type="number" class="form-control" placeholder="Open" value="{{ object.tact1_open }}"/></td>
+					<td><input type="number" class="form-control" placeholder="Close" value="{{ object.tact1_close }}"/></td>
+					<td><input type="number" class="form-control" placeholder="Total"
+                               value="{{ object.tact1_close|sub:object.tact1_open }}"/></td>
 
 				<tr>
 					<th>Tact #2</th>
-					<td><input type="number" class="form-control" placeholder="Open" required/></td>
-					<td><input type="number" class="form-control" placeholder="Close" required/></td>
-					<td><input type="number" class="form-control" placeholder="Total" required/></td>
+					<td><input type="number" class="form-control" placeholder="Open" value="{{ object.tact2_open }}"/></td>
+					<td><input type="number" class="form-control" placeholder="Close" value="{{ object.tact2_close }}"/></td>
+					<td><input type="number" class="form-control" placeholder="Total"
+                               value="{{ object.tact2_close|sub:object.tact2_open }}"/></td>
 
 				<tr>
 					<th>Tact #3</th>
-					<td><input type="number" class="form-control" placeholder="Open" required/></td>
-					<td><input type="number" class="form-control" placeholder="Close" required/></td>
-					<td><input type="number" class="form-control" placeholder="Total" required/></td>
+					<td><input type="number" class="form-control" placeholder="Open" value="{{ object.tact3_open }}"/></td>
+					<td><input type="number" class="form-control" placeholder="Close" value="{{ object.tact3_close }}"/></td>
+					<td><input type="number" class="form-control" placeholder="Total"
+                               value="{{ object.tact3_close|sub:object.tact3_open }}"/></td>
 
 				</tr>
 				<tr>
 					<th>Tact #4</th>
-					<td><input type="number" class="form-control" placeholder="Open" required/></td>
-					<td><input type="number" class="form-control" placeholder="Close" required/></td>
-					<td><input type="number" class="form-control" placeholder="Total" required/></td>
+					<td><input type="number" class="form-control" placeholder="Open" value="{{ object.tact4_open }}"/></td>
+					<td><input type="number" class="form-control" placeholder="Close" value="{{ object.tact4_close }}"/></td>
+					<td><input type="number" class="form-control" placeholder="Total"
+                               value="{{ object.tact4_close|sub:object.tact4_open }}"/></td>
 				</tr>
 				<tr>
 					<th>Tact #5</th>
-					<td><input type="number" class="form-control" placeholder="Open" required/></td>
-					<td><input type="number" class="form-control" placeholder="Close" required/></td>
-					<td><input type="number" class="form-control" placeholder="Total" required/></td>
+					<td><input type="number" class="form-control" placeholder="Open" value="{{ object.tact5_open }}"/></td>
+					<td><input type="number" class="form-control" placeholder="Close" value="{{ object.tact5_close }}"/></td>
+					<td><input type="number" class="form-control" placeholder="Total"
+                               value="{{ object.tact5_close|sub:object.tact5_open }}"/></td>
 
 				<tr>
 					<th># of Transactions</th>
-					<td><input type="number" class="form-control" required/></td>
+					<td><input type="number" class="form-control" value="{{ object.transactions_total }}"/></td>
 				</tr>
 				<tr>
 					<th>GSV Total</th>
-					<td><input type="number" class="form-control" required/></td>
+					<td><input type="number" class="form-control" value="{{ object.gsv_total }}"/></td>
 				</tr>
 
 
@@ -133,8 +142,10 @@
 					</tr>
 					<tr>
 						<th>Meter #1 (EAST)</th>
-						<td><input type="number" class="form-control" placeholder="Meter 1 Open" required/></td>
-						<td><input type="number" class="form-control" placeholder="Meter 1 Close" required/></td>
+						<td><input type="number" class="form-control" placeholder="Meter 1 Open"
+                                   value="{{ object.incoming_meter_1_open }}"/></td>
+						<td><input type="number" class="form-control" placeholder="Meter 1 Close"
+                                   value="{{ object.incoming_meter_1_close }}"/></td>
 						<div class="btn-group" data-toggle="buttons" id="radioopt">
 							  <td><label class="btn btn-primary active">
 							    <input type="radio" name="options" id="option1">
@@ -151,13 +162,18 @@
 							  </label>
 							  </td>
 						</div>
-						<td><input type="number" class="form-control" placeholder="Daily Total" required/></td>
+
+						<td><input type="number" class="form-control" placeholder="Daily Total"
+                                   value="{{ incoming_meter_daily_total }}"/>
+                        </td>
 
 					</tr>
 					<tr>
 						<th>Meter #2 (WEST)</th>
-						<td><input type="number" class="form-control" placeholder="Meter 2 Open" required/></td>
-						<td><input type="number" class="form-control" placeholder="Meter 2 Close" required/></td>
+						<td><input type="number" class="form-control" placeholder="Meter 2 Open"
+                                   value="{{ object.incoming_meter_2_open }}"/></td>
+						<td><input type="number" class="form-control" placeholder="Meter 2 Close"
+                                   value="{{ object.incoming_meter_2_close }}"/></td>
 						<div class="btn-group" data-toggle="buttons" id="radioopt">
 							  <td><label class="btn btn-primary active">
 							    <input type="radio" name="options" id="option1">
@@ -174,12 +190,18 @@
 							  </label>
 							  </td>
 						</div>
-						<td><input type="number" class="form-control" placeholder="Daily Total" required/></td>
+						<td><input type="number" class="form-control" placeholder="Daily Total"
+                                   value="{{ object.incoming_meter_2_close|sub:object.incoming_meter_2_open }}"/>
+                        </td>
+                    <tr>
 
-					</tr>
-					<tr>
+
+
+
 						<th>Total</th>
-						<td><input type="number" class="form-control" placeholder="Combined Total" required/></td
+						<td><input type="number" class="form-control" placeholder="Combined Total"
+                                   value=""/></td>
+
 					</tr>
 
 			</div>
@@ -206,8 +228,10 @@
 					</tr>
 					<tr>
 						<th>Meter #1 (EAST)</th>
-						<td><input type="number" class="form-control" placeholder="Meter 1 Open" required/></td>
-						<td><input type="number" class="form-control" placeholder="Meter 1 Close" required/></td>
+						<td><input type="number" class="form-control" placeholder="Meter 1 Open"
+                                   value="{{ object.outgoing_meter_1_open }}"/></td>
+						<td><input type="number" class="form-control" placeholder="Meter 1 Close"
+                                   value="{{ object.outgoing_meter_1_close }}"/></td>
 						<div class="btn-group" data-toggle="buttons" id="radioopt">
 							  <td><label class="btn btn-primary active">
 							    <input type="radio" name="options" id="option1">
@@ -224,13 +248,17 @@
 							  </label>
 							  </td>
 						</div>
-						<td><input type="number" class="form-control" placeholder="Daily Total" required/></td>
+						<td><input type="number" class="form-control" placeholder="Daily Total"
+                                   value="{{ object.outgoing_meter_1_close|sub:object.outgoing_meter_1_open }}"/>
+                        </td>
 
 					</tr>
 					<tr>
 						<th>Meter #2 (WEST)</th>
-						<td><input type="number" class="form-control" placeholder="Meter 2 Open" required/></td>
-						<td><input type="number" class="form-control" placeholder="Meter 2 Close" required/></td>
+						<td><input type="number" class="form-control" placeholder="Meter 2 Open"
+                                   value="{{ object.outgoing_meter_2_open }}"/></td>
+						<td><input type="number" class="form-control" placeholder="Meter 2 Close"
+                                   value="{{ object.outgoing_meter_2_close }}"/></td>
 						<div class="btn-group" data-toggle="buttons" id="radioopt">
 							  <td><label class="btn btn-primary active">
 							    <input type="radio" name="options" id="option1">
@@ -247,14 +275,19 @@
 							  </label>
 							  </td>
 						</div>
-						<td><input type="number" class="form-control" placeholder="Daily Total" required/></td>
+						<td><input type="number" class="form-control" placeholder="Daily Total"
+                                   value="{{ object.outgoing_meter_2_close|sub:object.outgoing_meter_2_open }}"/>
+                        </td>
 
 
 
 					</tr>
 					<tr>
+
+
 						<th>Total</th>
-						<td><input type="number" class="form-control" placeholder="Combined Total" required/></td>
+						<td><input type="number" class="form-control" placeholder="Combined Total"
+                                   value=""/></td>
 
 					</tr>
 			</div>
@@ -265,10 +298,10 @@
 
 		<div class="form-group">
   		<label for="comment">Comments:</label>
-  		<textarea class="form-control" rows="5" id="comments" required></textarea>
+  		<textarea class="form-control" rows="5" id="comments" value="{{ object.comments }}"></textarea>
 		</div>
 
 	</div>
-    </form>
+
 
 {% endblock %}

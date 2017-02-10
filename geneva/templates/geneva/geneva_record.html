@@ -164,7 +164,7 @@
 						</div>
 
 						<td><input type="number" class="form-control" placeholder="Daily Total"
-                                   value="{{ incoming_meter_daily_total }}"/>
+                                   value="{{ object.incoming_meter_1_total }}"/>
                         </td>
 
 					</tr>
@@ -191,7 +191,7 @@
 							  </td>
 						</div>
 						<td><input type="number" class="form-control" placeholder="Daily Total"
-                                   value="{{ object.incoming_meter_2_close|sub:object.incoming_meter_2_open }}"/>
+                                   value="{{ object.incoming_meter_2_total }}"/>
                         </td>
                     <tr>
 
@@ -200,7 +200,7 @@
 
 						<th>Total</th>
 						<td><input type="number" class="form-control" placeholder="Combined Total"
-                                   value=""/></td>
+                                   value="{{ object.incoming_meter_daily_total }}"/></td>
 
 					</tr>
 

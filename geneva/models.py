@@ -55,7 +55,7 @@ class GvData(models.Model):
     pub_date = models.DateField(db_index=True)
 
     def __str__(self):
-        return str(self.pub_date) + '(' + str(self.pk) + ')'
+        return 'Geneva {} {}'.format(self.id, self.pub_date)
 
     def get_absolute_url(self):
         return reverse('geneva:geneva', kwargs={'pk': self.pk})

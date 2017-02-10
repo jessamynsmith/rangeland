@@ -18,3 +18,4 @@ class GenevaForm(forms.ModelForm):
                   'outgoing_meter_2_close', 'outgoing_meter_2_total',
                   'outgoing_meter_daily_total', 'transactions_total', 'gsv_total',
                   'comments', 'pub_date']
+

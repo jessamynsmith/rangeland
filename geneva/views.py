@@ -3,6 +3,7 @@ from .models import GvData
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.core.urlresolvers import reverse_lazy
 from django.shortcuts import render
+from django.http import HttpResponse, HttpResponseRedirect
 
 
 class IndexView(generic.ListView):
@@ -31,6 +32,13 @@ class RecordCreate(CreateView):
               'outgoing_meter_2_close', 'outgoing_meter_2_total',
               'outgoing_meter_daily_total', 'transactions_total', 'gsv_total',
               'comments', 'pub_date', 'report_file']
+
+    def form_valid(self, form):
+        form.instance.incoming_meter_daily_total = (form.instance.incoming_meter_1_total +
+                                                    form.instance.incoming_meter_2_total)
+        form.save()
+
+        return HttpResponseRedirect('geneva:index')
 
 
 class RecordUpdate(UpdateView):
